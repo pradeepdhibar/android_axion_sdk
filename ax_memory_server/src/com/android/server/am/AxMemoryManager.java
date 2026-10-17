@@ -871,7 +871,8 @@ public class AxMemoryManager implements IAxMemoryManager {
             ProcessList.setCameraTop(0);
         }
 
-        if (curCachePercent == this.mCachePercentCamera) {
+        if (curCachePercent == this.mCachePercentCamera
+                && curCachePercent != this.mCachePercentDefault) {
             SystemProperties.set(PROP_CACHE_PERCENT, Integer.toString(this.mCachePercentDefault));
             ProcessList.updateLmkProps();
         }
